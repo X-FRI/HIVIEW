@@ -1,34 +1,92 @@
-# SHENZHEN HIVIEW SCIENCE AND TECHNOLOGY CO., LTD.  
-### HIVIEW-TECH is a professional product designer
-### Provide services: Hardware customization/System building/AI algorithm/ISP tuning 
-### Business cooperation, contact Email: thomas@hiview-tech.cn  
-## RoadMap:
-### 1. Design products in the form of core board + base board (customizable);
-<img src=/res/16dv300-c.jpg width=200 height=200 /><img src=/res/59v200-c.jpg width=200 height=200 /><img src=/res/16av300-c.jpg width=200 height=200 />
+# HIVIEW
+> A multi-process software framework for hisilicon (海思) ipc/dvr/nvr/ebox 
+>
+> [!important]
+> This branch is specifically update for MPP-3559
 
-<img src=/res/19dv500-c.jpg width=200 height=200 /><img src=/res/16dv500-c.jpg width=200 height=200 /><img src=/res/hv3403-c.jpg width=200 height=200 />
+## Features
 
-<img src=/res/16dv300-b2.jpg width=42% /><img src=/res/16dv300-b3.jpg width=42% /><img src=/res/16dv300-b.jpg width=42% /><img src=/res/16dv300-b1.jpg width=42% /><img src=/res/16dv300-b5.jpg width=43% /><img src=/res/hv3403-b.jpg width=43% />
+- BSP   :  Eth/WiFi/Vpn/Upgrade/Sadp
+- MPP   :  Hi3516x/Hi3519x/Hi3559x/Hi3536x
+- CODEC :  H264/H265/MJPEG/AAC/PCMA/PCMU
+- RTSPS :  Server/Client/Push
+- WEBS  :  Http/Https/Websocket/Webrtc
+- APP   :  NVR/GUI
+- REC   :  fMP4
+- RTMPS :  Push
+- SIPS  :  UAS/GB28181
+- ONVIF :  NVT/NVC
+- SRTS  :  SRT/UDP/RTP/SRTP
+- SVP   :  YOLO/LPR
+- UVC   :  H264/MJPEG
 
-### 2. Support users to develop their own products based on OpenHisilicon;
-<img src=/res/p1.jpg width=30% /> <img src=/res/p2.jpg width=30% /> <img src=/res/p3.jpg width=30% />
-### 3. More products: https://github.com/openhisilicon/PRODUCT
-## Features:
+<img src="./res/diagram.jpg" height="150px" />
+<img src="./res/webrtc.png" height="150px" />
 
-##### 1, BSP:   Eth/WiFi/Vpn/Upgrade/Sadp
-##### 2, MPP:   Hi3516x/Hi3519x/Hi3559x/Hi3536x
-##### 3, CODEC: H264/H265/MJPEG/AAC/PCMA/PCMU
-##### 4, RTSPS: Server/Client/Push
-##### 5, WEBS:  Http/Https/Websocket/Webrtc
-##### 6, APP:   NVR/GUI
-##### 7, REC:   fMP4
-##### 8, RTMPS: Push
-##### 9, SIPS:  UAS/GB28181
-##### 10, ONVIF: NVT/NVC
-##### 11, SRTS: SRT/UDP/RTP/SRTP
-##### 12, SVP:  YOLO/LPR
-##### 13, UVC:  H264/MJPEG
+## source tree
+```
+.  
+├── bin         (output bin)  
+├── build       (build config)  
+├── fw          (framework)  
+│   ├── cfifo   (cycle buffer)  
+│   ├── nm      (netmsg)  
+│   ├── cjson   (cjson)  
+│   └── comm    (comm)  
+├── inc         (top include)  
+├── lib         (output library)  
+└── mod         (module)  
+    ├── bsp     (sys init && netinf && syscfg && log)  
+    ├── codec   (isp&&venc&vdec&vo)  
+    ├── svp     (smart vison platform)  
+    ├── rec     (video file to storage)  
+    ├── user1   (user custom module)
+    ├── mpp     (hisi mpp)  
+    ├── app     (application && gui)
+    ├── onvif   (onvif nvt && nvc)  
+    ├── rtsps   (rtsp server && client)
+    └── webs    (web server)  
+  
+  
+// system structure:  
+  
++------------+    +------------+         +-----------+  
+|    app     |    |   user1    |         |    svp    |             req +------------+
++------------+    +------------+         +-----------+           <-----+   onvif    |
+   pub  rep          pub   rep            pub    rep             |     +------------+
+    ^    ^            ^     ^              ^      ^              |  
+    |    |            |     |              |      |              |  
+    |    |            |     |              |      |              | req +------------+  
+    +----+------------+-----+--------------+------+--------------+-----+    webs    |  
+    |    |            |     |              |      |              |     +------------+  
+    |    |            |     |              |      |              |  
+    |    |            |     |              |      |              | req +------------+  
+    v    v            v     v              v      v              <-----+    rtsps   |  
+   pub  rep          pub   rep            pub    rep                   +-------+--+-+  
++------------+    +------------+        +------------+                         |  |  
+|    bsp     |    |    codec   |cfifo <-|     rec    |file <-------------------+  |  
++------------+    +------------+  ^     +------------+                            |  
+                                  |                                               |  
+                                  +-----------------------------------------------+  
+  
++-----------------------------------------------------------------------------------+  
+|                                linux && HisiSDK                                   |  
++-----------------------------------------------------------------------------------+  
+  
+```  
+  
+  
+## startup sequence
+```  
+  BSP  CODEC  SVP   REC   USER1  RTSPS  WEBS ONVIF  APP
+   +     +     +     +     +       +     +     +     +  
+   |     |     |     |     |       |     |     |     |  
+   |     |     |     |     |       |     |     |     |  
++--v-----v-----v-----v-----v-------v-----v-----v-----v----> time;
+```
+  
+## compile:  
 
-<img src=/res/diagram.jpg width=88% />
-<img src=/res/webrtc.png width=85% />
-
+```  
+source build/3559 && make 
+```
