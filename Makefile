@@ -4,10 +4,6 @@
 GSF_HOME ?= $(PWD)
 GSF_CPU_ARCH ?= XXX
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 8e8c131 (init)
 MOD_DIRS := mod/bsp   \
 			mod/mpp/${GSF_CPU_ARCH} \
 			mod/codec \

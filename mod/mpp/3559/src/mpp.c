@@ -326,8 +326,6 @@ int gsf_mpp_vi_stop()
   return s32Ret;
 }
 
-<<<<<<< HEAD
-=======
 int gsf_mpp_vpss_send(int VpssGrp, int VpssGrpPipe, VIDEO_FRAME_INFO_S *pstVideoFrame , int s32MilliSec)
 {
   return HI_MPI_VPSS_SendFrame(VpssGrp, VpssGrpPipe, pstVideoFrame, s32MilliSec);
@@ -343,7 +341,6 @@ int gsf_mpp_uvc_release(int ViPipe, int ViChn, VIDEO_FRAME_INFO_S *pstFrameInfo)
   return mppex_uvc_rel(ViPipe, pstFrameInfo);
 }
 
->>>>>>> 8e8c131 (init)
 
 int gsf_mpp_af_start(gsf_mpp_af_t *af)
 {
@@ -562,15 +559,9 @@ int gsf_mpp_venc_send(int VeChn, VIDEO_FRAME_INFO_S *pstFrame, int s32MilliSec, 
     return -1;
     
   /*
-<<<<<<< HEAD
-  ÉèÖÃ±àÂëÆ÷ÊôÐÔÖÐÍ¨µÀ¿í¸ßÊôÐÔÊ±,ÐèÒªÊ×ÏÈÍ£Ö¹±àÂëÍ¨µÀ½ÓÊÕÊäÈëÍ¼Ïñ;
-  Í¨µÀ¿í¸ßÉèÖÃºóÍ¨µÀµÄÓÅÏÈ¼¶²¢²»»á»Ö¸´Ä¬ÈÏ,
-  ±àÂëÍ¨µÀµÄÆäËüËùÓÐ²ÎÊýÅäÖÃ»Ö¸´Ä¬ÈÏÖµ,¹Ø±ÕOSD,²¢ÇÒÇå¿ÕÂëÁ÷bufferºÍ»º´æÍ¼Ïñ¶ÓÁÐ;
-=======
   ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±,ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Í£Ö¹ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½;
   Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãºï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½Ä¬ï¿½ï¿½,
   ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»Ö¸ï¿½Ä¬ï¿½ï¿½Öµ,ï¿½Ø±ï¿½OSD,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½bufferï¿½Í»ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½;
->>>>>>> 8e8c131 (init)
   */
 
   VENC_CHN_ATTR_S stChnAttr;
@@ -1602,11 +1593,7 @@ static int vo_csc()
 }
 
 
-<<<<<<< HEAD
-//Æô¶¯ÊÓÆµÊä³öÉè±¸;
-=======
 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½è±¸;
->>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_start(int vodev, VO_INTF_TYPE_E type, VO_INTF_SYNC_E sync, int wbc)
 {
     HI_S32 i, j, s32Ret = HI_SUCCESS;
@@ -1678,11 +1665,7 @@ int gsf_mpp_vo_start(int vodev, VO_INTF_TYPE_E type, VO_INTF_SYNC_E sync, int wb
     return s32Ret;
 }
 
-<<<<<<< HEAD
-//Í£Ö¹ÊÓÆµÊä³öÉè±¸
-=======
 //Í£Ö¹ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½è±¸
->>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_stop(int vodev)
 {
     vo_mng_t *vdev = &vo_mng[vodev];
@@ -1699,11 +1682,7 @@ int gsf_mpp_vo_stop(int vodev)
     return 0;
 }
 
-<<<<<<< HEAD
-//´´½¨ÊÓÆµ²ãÏÔÊ¾Í¨µÀ;
-=======
 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½Ê¾Í¨ï¿½ï¿½;
->>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_layout(int volayer, VO_LAYOUT_E layout, RECT_S *rect)
 {
   int i = 0;
@@ -1797,10 +1776,6 @@ int gsf_mpp_vo_layout(int volayer, VO_LAYOUT_E layout, RECT_S *rect)
   return err;
 }
 
-<<<<<<< HEAD
-
-//·¢ËÍÊÓÆµÊý¾Ýµ½Ö¸¶¨ch;
-=======
 int gsf_mpp_vo_vsend(int volayer, int ch, int flag, char *data, gsf_mpp_frm_attr_t *attr)
 {
   int err = 0;
@@ -2078,7 +2053,6 @@ int gsf_mpp_ao_asend(int aodev, int ch, int flag, char *data, gsf_mpp_frm_attr_t
 
 #if 0
 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½Ýµï¿½Ö¸ï¿½ï¿½ch;
->>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_vsend(int volayer, int ch, char *data, gsf_mpp_frm_attr_t *attr)
 {
   int err = 0;
@@ -2306,10 +2280,6 @@ int gsf_mpp_vo_vsend(int volayer, int ch, char *data, gsf_mpp_frm_attr_t *attr)
   return err;
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 8e8c131 (init)
 int gsf_mpp_ao_asend(int aodev, int ch, char *data, gsf_mpp_frm_attr_t *attr)
 {
 
@@ -2345,11 +2315,8 @@ int gsf_mpp_ao_asend(int aodev, int ch, char *data, gsf_mpp_frm_attr_t *attr)
 
   return s32Ret;
 }
-<<<<<<< HEAD
-=======
 #endif
 
->>>>>>> 8e8c131 (init)
 
 #include "audio_aac_adp.h"
 
@@ -2411,11 +2378,7 @@ __err:
 }
 
 
-<<<<<<< HEAD
-//Çå³ý½âÂëÏÔÊ¾BUFF
-=======
 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾BUFF
->>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_clear(int volayer, int ch)
 {
   int err = 0;
@@ -2481,11 +2444,7 @@ int gsf_mpp_vo_bind(int volayer, int ch, gsf_mpp_vo_src_t *src)
 
 
 
-<<<<<<< HEAD
-//²Ã¼ôÍ¨µÀÔ´Í¼ÏñÇøÓòµ½ÏÔÊ¾Í¨µÀ(¾Ö²¿·Å´ó)
-=======
 //ï¿½Ã¼ï¿½Í¨ï¿½ï¿½Ô´Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾Í¨ï¿½ï¿½(ï¿½Ö²ï¿½ï¿½Å´ï¿½)
->>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_crop(int volayer, int ch, RECT_S *rect)
 {
   HI_S32 s32Ret = HI_SUCCESS;
@@ -2744,15 +2703,9 @@ int gsf_mpp_fb_start(int vofb, VO_INTF_SYNC_E sync, int hide)
     }
     stAlpha.bAlphaEnable = HI_TRUE;
     stAlpha.bAlphaChannel = HI_FALSE;
-<<<<<<< HEAD
-    stAlpha.u8Alpha0 = 0x0;//0xff; // µ±×î¸ßÎ»Îª0Ê±,Ñ¡Ôñ¸ÃÖµ×÷ÎªAlpha
-    stAlpha.u8Alpha1 = 0xff;//0x0; // µ±×î¸ßÎ»Îª1Ê±,Ñ¡Ôñ¸ÃÖµ×÷ÎªAlpha
-    stAlpha.u8GlobalAlpha = 0x0;//ÔÚAlphaÍ¨µÀÊ¹ÄÜÊ±Æð×÷ÓÃ
-=======
     stAlpha.u8Alpha0 = 0x0;//0xff; // ï¿½ï¿½ï¿½ï¿½ï¿½Î»Îª0Ê±,Ñ¡ï¿½ï¿½ï¿½Öµï¿½ï¿½ÎªAlpha
     stAlpha.u8Alpha1 = 0xff;//0x0; // ï¿½ï¿½ï¿½ï¿½ï¿½Î»Îª1Ê±,Ñ¡ï¿½ï¿½ï¿½Öµï¿½ï¿½ÎªAlpha
     stAlpha.u8GlobalAlpha = 0x0;//ï¿½ï¿½AlphaÍ¨ï¿½ï¿½Ê¹ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
->>>>>>> 8e8c131 (init)
     
     if (ioctl(fd, FBIOPUT_ALPHA_HIFB,  &stAlpha) < 0)
     {

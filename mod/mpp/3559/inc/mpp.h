@@ -138,11 +138,8 @@ int gsf_mpp_venc_snap(VENC_CHN VencChn, HI_U32 SnapCnt, int(*cb)(int i, VENC_STR
 int gsf_mpp_scene_start(char *path, int scenemode);
 int gsf_mpp_scene_stop();
 
-<<<<<<< HEAD
-=======
 static int _audio_init = 0;
 
->>>>>>> 8e8c131 (init)
 typedef struct { // ==gsf_scene_ae_t
   float compensation_mul; // 0.5 - 1.5;
 }gsf_mpp_scene_ae_t;
@@ -313,16 +310,6 @@ int gsf_mpp_rgn_canvas_update(RGN_HANDLE Handle);
 
 //vodev;
 enum {
-<<<<<<< HEAD
-  VODEV_HD0 = 0,  // UHDÊÓÆµÉè±¸
-  VODEV_HD1 = 1,  // HDÊÓÆµÉè±¸
-};
-
-//Æô¶¯ÊÓÆµÊä³öÉè±¸;
-int gsf_mpp_vo_start(int vodev, VO_INTF_TYPE_E type, VO_INTF_SYNC_E sync, int wbc);
-
-//Í£Ö¹ÊÓÆµÊä³öÉè±¸
-=======
   VODEV_HD0 = 0,  // UHDï¿½ï¿½Æµï¿½è±¸
   VODEV_HD1 = 1,  // HDï¿½ï¿½Æµï¿½è±¸
 };
@@ -330,8 +317,10 @@ int gsf_mpp_vo_start(int vodev, VO_INTF_TYPE_E type, VO_INTF_SYNC_E sync, int wb
 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½è±¸;
 int gsf_mpp_vo_start(int vodev, VO_INTF_TYPE_E type, VO_INTF_SYNC_E sync, int wbc);
 
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½è±¸;
+int gsf_mpp_vo_start(int vodev, VO_INTF_TYPE_E type, VO_INTF_SYNC_E sync, int wbc);
+
 //Í£Ö¹ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½è±¸
->>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_stop(int vodev);
 
 //vofb;
@@ -341,25 +330,12 @@ enum {
   VOFB_MOUSE = 2, // MOUSE Layer
   VOFB_BUTT
 };
-<<<<<<< HEAD
-// FB²ã²Ù×÷
-=======
 // FBï¿½ï¿½ï¿½ï¿½ï¿½
->>>>>>> 8e8c131 (init)
 int gsf_mpp_fb_start(int vofb, VO_INTF_SYNC_E sync, int hide);
 
 
 //volayer;
 enum {
-<<<<<<< HEAD
-  VOLAYER_HD0 = 0,  // ÊÓÆµ²ã0
-  VOLAYER_HD1 = 1,  // ÊÓÆµ²ã1
-  VOLAYER_PIP = 2,  // PIP²ã
-  VOLAYER_BUTT
-};
-
-// ÏÔÊ¾Í¨µÀ²¼¾Ö
-=======
   VOLAYER_HD0 = 0,  // ï¿½ï¿½Æµï¿½ï¿½0
   VOLAYER_HD1 = 1,  // ï¿½ï¿½Æµï¿½ï¿½1
   VOLAYER_PIP = 2,  // PIPï¿½ï¿½
@@ -367,7 +343,6 @@ enum {
 };
 
 // ï¿½ï¿½Ê¾Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
->>>>>>> 8e8c131 (init)
 typedef enum {
   VO_LAYOUT_NONE  = 0, VO_LAYOUT_10MUX = 10,
   VO_LAYOUT_1MUX  = 1, VO_LAYOUT_12MUX = 12,
@@ -380,9 +355,6 @@ typedef enum {
 }VO_LAYOUT_E;
 
 
-<<<<<<< HEAD
-//´´½¨Í¼Ïñ²ãÏÔÊ¾Í¨µÀ;
-=======
 //second channel;
 typedef enum {
   SECOND_DISABLE    = 0,
@@ -400,16 +372,11 @@ typedef struct {
 }gsf_mpp_img_flip_t;
 
 //ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾Í¨ï¿½ï¿½;
->>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_layout(int volayer, VO_LAYOUT_E layout, RECT_S *rect);
 
 
 //vdec;
-<<<<<<< HEAD
-//½âÂëÊý¾ÝÖ¡ÊôÐÔ
-=======
 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¡ï¿½ï¿½ï¿½ï¿½
->>>>>>> 8e8c131 (init)
 typedef struct {
     int size;     // data size;
     int ftype;    // frame type;
@@ -420,15 +387,6 @@ typedef struct {
     unsigned long long pts; // timestamp;
 }gsf_mpp_frm_attr_t;
 
-<<<<<<< HEAD
-//·¢ËÍÊÓÆµÊý¾Ýµ½ÏÔÊ¾Í¨µÀ(´´½¨VDECÍ¨µÀ)
-int gsf_mpp_vo_vsend(int volayer, int ch, char *data, gsf_mpp_frm_attr_t *attr);
-
-//·¢ËÍÒôÆµÊý¾Ýµ½ audio ½âÂëÊä³ö;
-int gsf_mpp_ao_asend(int aodev, int ch, char *data, gsf_mpp_frm_attr_t *attr);
-
-//½âÂë×´Ì¬;
-=======
 
 #if 0
 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½Ýµï¿½ï¿½ï¿½Ê¾Í¨ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½VDECÍ¨ï¿½ï¿½)
@@ -443,7 +401,6 @@ int gsf_mpp_vo_vsend(int volayer, int ch, int flag, char *data, gsf_mpp_frm_attr
 int gsf_mpp_ao_asend(int aodev, int ch, int flag, char *data, gsf_mpp_frm_attr_t *attr);
 
 //ï¿½ï¿½ï¿½ï¿½×´Ì¬;
->>>>>>> 8e8c131 (init)
 typedef struct {
     int left_byte;    // vdec
     int left_frame;   // vdec
@@ -451,19 +408,11 @@ typedef struct {
     int bufused;      // vo
 }gsf_mpp_vo_stat_t;
 
-<<<<<<< HEAD
-//»ñÈ¡½âÂëÏÔÊ¾×´Ì¬
-int gsf_mpp_vo_stat(int volayer, int ch, gsf_mpp_vo_stat_t *stat);
-//ÉèÖÃ½âÂëÏÔÊ¾FPS
-int gsf_mpp_vo_setfps(int volayer, int ch, int fps);
-//Çå³ý½âÂëÏÔÊ¾BUFF
-=======
 //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾×´Ì¬
 int gsf_mpp_vo_stat(int volayer, int ch, gsf_mpp_vo_stat_t *stat);
 //ï¿½ï¿½ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾FPS
 int gsf_mpp_vo_setfps(int volayer, int ch, int fps);
 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾BUFF
->>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_clear(int volayer, int ch);
 
 //VO-BIND-VPSS for DVR;
@@ -477,15 +426,6 @@ int gsf_mpp_vo_bind(int volayer, int ch, gsf_mpp_vo_src_t *src);
 //audio ao_bind_ai;
 int gsf_mpp_ao_bind(int aodev, int ch, int aidev, int aich);
 
-<<<<<<< HEAD
-//ÉèÖÃÍ¨µÀÔ´Í¼Ïñ²Ã¼ôÇøÓò(ÓÃÓÚ¾Ö²¿·Å´ó)
-int gsf_mpp_vo_crop(int volayer, int ch, RECT_S *rect);
-
-//ÉèÖÃVOÍ¨µÀÏÔÊ¾ÇøÓò±ÈÀý(rect·µ»Øµ÷ÕûºóµÄÎ»ÖÃ)
-int gsf_mpp_vo_aspect(int volayer, int ch, RECT_S *rect);
-
-//ÉèÖÃVOÍ¨µÀÏÔÊ¾ÇøÓò(Î»ÖÃ&´óÐ¡);
-=======
 //ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½Ô´Í¼ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ú¾Ö²ï¿½ï¿½Å´ï¿½)
 int gsf_mpp_vo_crop(int volayer, int ch, RECT_S *rect);
 
@@ -493,7 +433,6 @@ int gsf_mpp_vo_crop(int volayer, int ch, RECT_S *rect);
 int gsf_mpp_vo_aspect(int volayer, int ch, RECT_S *rect);
 
 //ï¿½ï¿½ï¿½ï¿½VOÍ¨ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½(Î»ï¿½ï¿½&ï¿½ï¿½Ð¡);
->>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_rect(int volayer, int ch, RECT_S *rect, int priority);
 
 

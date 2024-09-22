@@ -37,10 +37,7 @@ int mppex_hook_venc_ee(gsf_mpp_venc_t *venc);
 int mppex_hook_vo(VO_INTF_SYNC_E sync);
 int mppex_hook_destroy();
 
-<<<<<<< HEAD
-=======
 int mppex_uvc_get(int idx, VIDEO_FRAME_INFO_S *pstFrameInfo, int s32MilliSec);
 int mppex_uvc_rel(int idx, VIDEO_FRAME_INFO_S *pstFrameInfo);
 
->>>>>>> 8e8c131 (init)
 #endif //__mppex_h__
