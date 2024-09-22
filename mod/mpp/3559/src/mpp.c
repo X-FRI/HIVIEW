@@ -326,6 +326,24 @@ int gsf_mpp_vi_stop()
   return s32Ret;
 }
 
+<<<<<<< HEAD
+=======
+int gsf_mpp_vpss_send(int VpssGrp, int VpssGrpPipe, VIDEO_FRAME_INFO_S *pstVideoFrame , int s32MilliSec)
+{
+  return HI_MPI_VPSS_SendFrame(VpssGrp, VpssGrpPipe, pstVideoFrame, s32MilliSec);
+}
+
+
+int gsf_mpp_uvc_get(int ViPipe, int ViChn, VIDEO_FRAME_INFO_S *pstFrameInfo, int s32MilliSec)
+{
+  return mppex_uvc_get(ViPipe, pstFrameInfo, s32MilliSec);
+}
+int gsf_mpp_uvc_release(int ViPipe, int ViChn, VIDEO_FRAME_INFO_S *pstFrameInfo)
+{
+  return mppex_uvc_rel(ViPipe, pstFrameInfo);
+}
+
+>>>>>>> 8e8c131 (init)
 
 int gsf_mpp_af_start(gsf_mpp_af_t *af)
 {
@@ -544,9 +562,15 @@ int gsf_mpp_venc_send(int VeChn, VIDEO_FRAME_INFO_S *pstFrame, int s32MilliSec, 
     return -1;
     
   /*
+<<<<<<< HEAD
   ÉèÖÃ±àÂëÆ÷ÊôÐÔÖÐÍ¨µÀ¿í¸ßÊôÐÔÊ±,ÐèÒªÊ×ÏÈÍ£Ö¹±àÂëÍ¨µÀ½ÓÊÕÊäÈëÍ¼Ïñ;
   Í¨µÀ¿í¸ßÉèÖÃºóÍ¨µÀµÄÓÅÏÈ¼¶²¢²»»á»Ö¸´Ä¬ÈÏ,
   ±àÂëÍ¨µÀµÄÆäËüËùÓÐ²ÎÊýÅäÖÃ»Ö¸´Ä¬ÈÏÖµ,¹Ø±ÕOSD,²¢ÇÒÇå¿ÕÂëÁ÷bufferºÍ»º´æÍ¼Ïñ¶ÓÁÐ;
+=======
+  ï¿½ï¿½ï¿½Ã±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±,ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Í£Ö¹ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½;
+  Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãºï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½Ä¬ï¿½ï¿½,
+  ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»Ö¸ï¿½Ä¬ï¿½ï¿½Öµ,ï¿½Ø±ï¿½OSD,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½bufferï¿½Í»ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½;
+>>>>>>> 8e8c131 (init)
   */
 
   VENC_CHN_ATTR_S stChnAttr;
@@ -1578,7 +1602,11 @@ static int vo_csc()
 }
 
 
+<<<<<<< HEAD
 //Æô¶¯ÊÓÆµÊä³öÉè±¸;
+=======
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½è±¸;
+>>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_start(int vodev, VO_INTF_TYPE_E type, VO_INTF_SYNC_E sync, int wbc)
 {
     HI_S32 i, j, s32Ret = HI_SUCCESS;
@@ -1650,7 +1678,11 @@ int gsf_mpp_vo_start(int vodev, VO_INTF_TYPE_E type, VO_INTF_SYNC_E sync, int wb
     return s32Ret;
 }
 
+<<<<<<< HEAD
 //Í£Ö¹ÊÓÆµÊä³öÉè±¸
+=======
+//Í£Ö¹ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½è±¸
+>>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_stop(int vodev)
 {
     vo_mng_t *vdev = &vo_mng[vodev];
@@ -1667,7 +1699,11 @@ int gsf_mpp_vo_stop(int vodev)
     return 0;
 }
 
+<<<<<<< HEAD
 //´´½¨ÊÓÆµ²ãÏÔÊ¾Í¨µÀ;
+=======
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½Ê¾Í¨ï¿½ï¿½;
+>>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_layout(int volayer, VO_LAYOUT_E layout, RECT_S *rect)
 {
   int i = 0;
@@ -1761,8 +1797,288 @@ int gsf_mpp_vo_layout(int volayer, VO_LAYOUT_E layout, RECT_S *rect)
   return err;
 }
 
+<<<<<<< HEAD
 
 //·¢ËÍÊÓÆµÊý¾Ýµ½Ö¸¶¨ch;
+=======
+int gsf_mpp_vo_vsend(int volayer, int ch, int flag, char *data, gsf_mpp_frm_attr_t *attr)
+{
+  int err = 0;
+  HI_S32 s32Ret = HI_SUCCESS;
+  
+  vo_mng_t *vdev = &vo_mng[layer2vdev[volayer]];
+  
+  if(vdev->layer[volayer].cnt == VO_LAYOUT_NONE
+    || attr->width == 0
+    || attr->height == 0
+    || (attr->etype != PT_H264 
+        && attr->etype != PT_H265 
+        && attr->etype != PT_MP4VIDEO
+        && attr->etype != PT_MJPEG
+        && attr->etype != PT_JPEG))
+  {
+    return -1;
+  }
+  
+  pthread_mutex_lock(&vdev->lock);
+  
+  if(vdev->layer[volayer].chs[ch].width != attr->width 
+    || vdev->layer[volayer].chs[ch].height != attr->height
+    || vdev->layer[volayer].chs[ch].etype != attr->etype)
+  {
+    vdev->layer[volayer].chs[ch].width  = attr->width;
+    vdev->layer[volayer].chs[ch].height = attr->height;
+    vdev->layer[volayer].chs[ch].etype  = attr->etype;
+    vdev->layer[volayer].chs[ch].src_type = VO_SRC_VDVP;
+    
+    int vpss_grp = vdev->layer[volayer].chs[ch].src_grp;
+    int vpss_chn = vdev->layer[volayer].chs[ch].src_chn;
+    
+    // VOLAYER_HD0: [0 - VPSS_MAX_GRP_NUM/2]
+    // VOLAYER_PIP: [VPSS_MAX_GRP_NUM/2 - VPSS_MAX_GRP_NUM];
+    vdev->layer[volayer].chs[ch].src_grp = VPSS_MAX_GRP_NUM/2 + ch;
+    vdev->layer[volayer].chs[ch].src_chn = VPSS_CHN0;
+    
+    // unbind vo && vpss && vdec;
+    if(vpss_grp != -1)
+    {
+      SAMPLE_COMM_VPSS_UnBind_VO(vpss_grp, VPSS_CHN0, volayer, ch);
+      SAMPLE_COMM_VDEC_UnBind_VPSS(ch, vpss_grp);
+      
+      // stop  vpss;
+      HI_BOOL chen[VPSS_MAX_PHY_CHN_NUM] = {HI_TRUE,HI_TRUE};
+      s32Ret = SAMPLE_COMM_VPSS_Stop(vpss_grp, chen);
+
+      // stop  vdec;
+      HI_MPI_VDEC_StopRecvStream(ch);
+      HI_MPI_VDEC_DestroyChn(ch);
+    }
+    // reset vpss_grp,vpss_chn;
+    vpss_grp = vdev->layer[volayer].chs[ch].src_grp;
+    vpss_chn = vdev->layer[volayer].chs[ch].src_chn;
+    
+    // start vdec;
+    if(1)
+    {
+    
+    printf("%s => start vdec ch:%d, etype:%d, width:%d, height:%d\n", __func__, ch, attr->etype, attr->width, attr->height);
+    
+    VDEC_CHN_ATTR_S stChnAttr;
+    VDEC_CHN_POOL_S stPool;
+    VDEC_CHN_PARAM_S stChnParam;
+
+    stChnAttr.enType           = attr->etype;
+    stChnAttr.enMode           = VIDEO_MODE_FRAME;
+    stChnAttr.u32PicWidth      = attr->width;
+    stChnAttr.u32PicHeight     = attr->height;
+    stChnAttr.u32StreamBufSize = attr->width * attr->height;
+    stChnAttr.u32FrameBufCnt   = 3 /*u32RefFrameNum*/ + 2 /*u32DisplayFrameNum*/ + 1;
+
+    if (PT_H264 == stChnAttr.enType || PT_H265 ==stChnAttr.enType)
+    {
+        stChnAttr.stVdecVideoAttr.u32RefFrameNum     = 3;
+        stChnAttr.stVdecVideoAttr.bTemporalMvpEnable = 1; // VIDEO_DEC_MODE_IPB
+        stChnAttr.u32FrameBufSize  = VDEC_GetPicBufferSize(stChnAttr.enType
+                                          , stChnAttr.u32PicWidth
+                                          , stChnAttr.u32PicHeight
+                                          , PIXEL_FORMAT_YVU_SEMIPLANAR_420
+                                          , DATA_BITWIDTH_8, 0);
+    }
+    else if (PT_JPEG == stChnAttr.enType || PT_MJPEG == stChnAttr.enType)
+    {
+        stChnAttr.enMode  = VIDEO_MODE_FRAME;
+        stChnAttr.u32FrameBufSize  = VDEC_GetPicBufferSize(stChnAttr.enType
+                                          , stChnAttr.u32PicWidth
+                                          , stChnAttr.u32PicHeight
+                                          , PIXEL_FORMAT_YVU_SEMIPLANAR_420
+                                          , DATA_BITWIDTH_8, 0);
+    }
+
+    CHECK_CHN_RET(HI_MPI_VDEC_CreateChn(ch, &stChnAttr), ch, "HI_MPI_VDEC_CreateChn");
+
+    if (VB_SOURCE_USER == g_enVdecVBSource)
+    {
+        stPool.hPicVbPool = g_ahPicVbPool[ch];
+        stPool.hTmvVbPool = g_ahTmvVbPool[ch];
+        CHECK_CHN_RET(HI_MPI_VDEC_AttachVbPool(ch, &stPool), ch, "HI_MPI_VDEC_AttachVbPool");
+    }
+
+    CHECK_CHN_RET(HI_MPI_VDEC_GetChnParam(ch, &stChnParam), ch, "HI_MPI_VDEC_GetChnParam");
+    if (PT_H264 == stChnAttr.enType || PT_H265 == stChnAttr.enType)
+    {
+        stChnParam.stVdecVideoParam.enDecMode         = VIDEO_DEC_MODE_IP;//16dv300 !!!VIDEO_DEC_MODE_IPB;
+        stChnParam.stVdecVideoParam.enCompressMode    = COMPRESS_MODE_NONE;//16dv300 !!!COMPRESS_MODE_TILE;
+        stChnParam.stVdecVideoParam.enVideoFormat     = VIDEO_FORMAT_TILE_64x16;
+        stChnParam.stVdecVideoParam.enOutputOrder     = VIDEO_OUTPUT_ORDER_DISP; //VIDEO_OUTPUT_ORDER_DEC
+    }
+    else
+    {
+        stChnParam.stVdecPictureParam.enPixelFormat   = PIXEL_FORMAT_YVU_SEMIPLANAR_420;
+        stChnParam.stVdecPictureParam.u32Alpha        = 255;
+    }
+    stChnParam.u32DisplayFrameNum = 2;
+    CHECK_CHN_RET(HI_MPI_VDEC_SetChnParam(ch, &stChnParam), ch, "HI_MPI_VDEC_SetChnParam");
+    CHECK_CHN_RET(HI_MPI_VDEC_StartRecvStream(ch), ch, "HI_MPI_VDEC_StartRecvStream");
+    
+    // 
+    HI_MPI_VDEC_SetDisplayMode(ch, VIDEO_DISPLAY_MODE_PREVIEW);
+    }
+
+    // start vpss;
+    if(0)
+    {
+      VPSS_GRP_ATTR_S stGrpAttr = {0};
+      VPSS_CHN_ATTR_S stChnAttr = {0};
+      
+      /*** create vpss group ***/
+      stGrpAttr.u32MaxW = ALIGN_UP(attr->width,  2);
+      stGrpAttr.u32MaxH = ALIGN_UP(attr->height, 2);
+      stGrpAttr.stFrameRate.s32SrcFrameRate = -1;
+      stGrpAttr.stFrameRate.s32DstFrameRate = -1;
+      stGrpAttr.enDynamicRange = DYNAMIC_RANGE_SDR8;
+      stGrpAttr.enPixelFormat  = PIXEL_FORMAT_YVU_SEMIPLANAR_420;
+      stGrpAttr.bNrEn   = HI_FALSE;
+      s32Ret = HI_MPI_VPSS_CreateGrp(ch, &stGrpAttr);
+
+      
+      /*** enable vpss chn, with frame ***/
+      stChnAttr.u32Width                    = ALIGN_UP(attr->width,  2);
+      stChnAttr.u32Height                   = ALIGN_UP(attr->height, 2);
+      stChnAttr.enChnMode                   = VPSS_CHN_MODE_USER;//VPSS_CHN_MODE_AUTO; //VPSS_CHN_MODE_USER - 1920x1088; //
+      stChnAttr.enCompressMode              = COMPRESS_MODE_NONE;//; //COMPRESS_MODE_SEG // HI_MPI_VPSS_GetChnFrame;
+      stChnAttr.enDynamicRange              = DYNAMIC_RANGE_SDR8;
+      stChnAttr.enPixelFormat               = PIXEL_FORMAT_YVU_SEMIPLANAR_420;
+      stChnAttr.stFrameRate.s32SrcFrameRate = -1;
+      stChnAttr.stFrameRate.s32DstFrameRate = -1;
+      stChnAttr.u32Depth                    = 1; // 0; HI_MPI_VPSS_GetChnFrame;
+      stChnAttr.bMirror                     = HI_FALSE;
+      stChnAttr.bFlip                       = HI_FALSE;
+      stChnAttr.stAspectRatio.enMode        = ASPECT_RATIO_NONE;
+      stChnAttr.enVideoFormat               = VIDEO_FORMAT_LINEAR;
+      
+      s32Ret = HI_MPI_VPSS_SetChnAttr(vpss_grp, vpss_chn, &stChnAttr);
+      s32Ret = HI_MPI_VPSS_EnableChn(vpss_grp, vpss_chn);
+      s32Ret = HI_MPI_VPSS_StartGrp(vpss_grp);
+    }
+    else
+    {
+      VPSS_GRP_ATTR_S stGrpAttr = {0};
+      VPSS_CHN_ATTR_S stChnAttr[VPSS_MAX_PHY_CHN_NUM] = {0};
+      
+      /*** create vpss group ***/
+      stGrpAttr.u32MaxW = ALIGN_UP(attr->width,  2);
+      stGrpAttr.u32MaxH = ALIGN_UP(attr->height, 2);
+      stGrpAttr.stFrameRate.s32SrcFrameRate = -1;
+      stGrpAttr.stFrameRate.s32DstFrameRate = -1;
+      stGrpAttr.enDynamicRange = DYNAMIC_RANGE_SDR8;
+      stGrpAttr.enPixelFormat  = PIXEL_FORMAT_YVU_SEMIPLANAR_420;
+      stGrpAttr.bNrEn   = HI_FALSE;
+        
+      /*** enable vpss chn, with frame ***/
+      int i;
+      for(i = 0; i < 2; i++)
+      {
+        stChnAttr[i].u32Width                    = ALIGN_UP((i == 0)?attr->width:640,  2);
+        stChnAttr[i].u32Height                   = ALIGN_UP((i == 0)?attr->height:480, 2);
+        stChnAttr[i].enChnMode                   = VPSS_CHN_MODE_USER; //VPSS_CHN_MODE_AUTO; //VPSS_CHN_MODE_USER - 1920x1088; //
+        stChnAttr[i].enCompressMode              = COMPRESS_MODE_NONE;//; //COMPRESS_MODE_SEG // HI_MPI_VPSS_GetChnFrame;
+        stChnAttr[i].enDynamicRange              = DYNAMIC_RANGE_SDR8;
+        stChnAttr[i].enPixelFormat               = PIXEL_FORMAT_YVU_SEMIPLANAR_420;
+        stChnAttr[i].stFrameRate.s32SrcFrameRate = -1;
+        stChnAttr[i].stFrameRate.s32DstFrameRate = -1;
+        stChnAttr[i].u32Depth                    = 1; // 0; HI_MPI_VPSS_GetChnFrame;
+        stChnAttr[i].bMirror                     = HI_FALSE;
+        stChnAttr[i].bFlip                       = HI_FALSE;
+        stChnAttr[i].stAspectRatio.enMode        = ASPECT_RATIO_NONE;
+        stChnAttr[i].enVideoFormat               = VIDEO_FORMAT_LINEAR;
+      }
+      
+      HI_BOOL chen[VPSS_MAX_PHY_CHN_NUM] = {HI_TRUE,HI_TRUE};
+      s32Ret = SAMPLE_COMM_VPSS_Start(vpss_grp, chen, &stGrpAttr, stChnAttr);
+      
+      if(1) //VPSS-LowDelay
+      {
+        VPSS_LOW_DELAY_INFO_S  stLowDelayInfo;
+        stLowDelayInfo.bEnable = HI_TRUE;//HI_FALSE;
+        stLowDelayInfo.u32LineCnt = 16*30;
+        s32Ret = HI_MPI_VPSS_SetLowDelayAttr(vpss_grp, 0, &stLowDelayInfo);
+        if(s32Ret != HI_SUCCESS)
+        {
+            SAMPLE_PRT("HI_MPI_VPSS_SetLowDelayAttr failed %#x!\n", s32Ret);
+        }
+      }
+    }
+    // bind  vdec && vpss && vo;
+    s32Ret = SAMPLE_COMM_VDEC_Bind_VPSS(ch, vpss_grp);
+    s32Ret = SAMPLE_COMM_VPSS_Bind_VO(vpss_grp, vpss_chn, volayer, ch);
+  }
+  
+  pthread_mutex_unlock(&vdev->lock);
+  
+  // send vdec;
+  VDEC_STREAM_S stStream = {0};
+  stStream.u64PTS  = attr->pts;//0;
+  stStream.pu8Addr = data;
+  stStream.u32Len  = attr->size;
+  stStream.bEndOfFrame  = HI_TRUE;
+  stStream.bEndOfStream = HI_FALSE;
+  stStream.bDisplay = 1;
+  s32Ret = HI_MPI_VDEC_SendStream(ch, &stStream, 0);
+  //printf("HI_MPI_VDEC_SendStream ch:%d, ret:0x%x\n", ch, s32Ret);
+  return err;
+}
+
+int gsf_mpp_ao_asend(int aodev, int ch, int flag, char *data, gsf_mpp_frm_attr_t *attr)
+{
+  if(!_audio_init)
+  {
+    _audio_init = 1;
+    extern HI_S32 sample_audio_init();
+    sample_audio_init();
+  }
+  
+  HI_S32 s32Ret = 0;
+  HI_S32 adch = 0;
+    
+  static gsf_mpp_frm_attr_t _attr = {.etype = PT_BUTT, };
+  
+  if(_attr.etype != attr->etype)
+  {
+    //reset;
+    _attr = *attr;
+    SAMPLE_AUDIO_AdecAo(attr);
+  }
+  
+  if(attr->size == 0)
+  {
+    return HI_MPI_ADEC_SendEndOfStream(adch, HI_FALSE);
+  }
+  
+  AUDIO_STREAM_S stAudioStream;
+  stAudioStream.pStream = data;
+  stAudioStream.u32Len = attr->size;
+  stAudioStream.u64TimeStamp = 0;
+  stAudioStream.u32Seq = 0;
+  
+  /* here only demo adec streaming sending mode, but pack sending mode is commended */
+  s32Ret = HI_MPI_ADEC_SendStream(adch, &stAudioStream, flag);
+  if (HI_SUCCESS != s32Ret)
+  {
+    printf("%s: HI_MPI_ADEC_SendStream(%d) failed \n", \
+           __FUNCTION__, adch, stAudioStream.u32Len);
+  }
+  else
+  {
+    //printf("%s: HI_MPI_ADEC_SendStream(%d) OK u32Len:%d, u64TimeStamp:%llu\n", \
+    //       __FUNCTION__, adch, stAudioStream.u32Len, stAudioStream.u64TimeStamp);
+  }
+
+  return s32Ret;
+}
+
+#if 0
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½Ýµï¿½Ö¸ï¿½ï¿½ch;
+>>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_vsend(int volayer, int ch, char *data, gsf_mpp_frm_attr_t *attr)
 {
   int err = 0;
@@ -1990,7 +2306,10 @@ int gsf_mpp_vo_vsend(int volayer, int ch, char *data, gsf_mpp_frm_attr_t *attr)
   return err;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8e8c131 (init)
 int gsf_mpp_ao_asend(int aodev, int ch, char *data, gsf_mpp_frm_attr_t *attr)
 {
 
@@ -2026,6 +2345,11 @@ int gsf_mpp_ao_asend(int aodev, int ch, char *data, gsf_mpp_frm_attr_t *attr)
 
   return s32Ret;
 }
+<<<<<<< HEAD
+=======
+#endif
+
+>>>>>>> 8e8c131 (init)
 
 #include "audio_aac_adp.h"
 
@@ -2087,7 +2411,11 @@ __err:
 }
 
 
+<<<<<<< HEAD
 //Çå³ý½âÂëÏÔÊ¾BUFF
+=======
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾BUFF
+>>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_clear(int volayer, int ch)
 {
   int err = 0;
@@ -2153,7 +2481,11 @@ int gsf_mpp_vo_bind(int volayer, int ch, gsf_mpp_vo_src_t *src)
 
 
 
+<<<<<<< HEAD
 //²Ã¼ôÍ¨µÀÔ´Í¼ÏñÇøÓòµ½ÏÔÊ¾Í¨µÀ(¾Ö²¿·Å´ó)
+=======
+//ï¿½Ã¼ï¿½Í¨ï¿½ï¿½Ô´Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾Í¨ï¿½ï¿½(ï¿½Ö²ï¿½ï¿½Å´ï¿½)
+>>>>>>> 8e8c131 (init)
 int gsf_mpp_vo_crop(int volayer, int ch, RECT_S *rect)
 {
   HI_S32 s32Ret = HI_SUCCESS;
@@ -2412,9 +2744,15 @@ int gsf_mpp_fb_start(int vofb, VO_INTF_SYNC_E sync, int hide)
     }
     stAlpha.bAlphaEnable = HI_TRUE;
     stAlpha.bAlphaChannel = HI_FALSE;
+<<<<<<< HEAD
     stAlpha.u8Alpha0 = 0x0;//0xff; // µ±×î¸ßÎ»Îª0Ê±,Ñ¡Ôñ¸ÃÖµ×÷ÎªAlpha
     stAlpha.u8Alpha1 = 0xff;//0x0; // µ±×î¸ßÎ»Îª1Ê±,Ñ¡Ôñ¸ÃÖµ×÷ÎªAlpha
     stAlpha.u8GlobalAlpha = 0x0;//ÔÚAlphaÍ¨µÀÊ¹ÄÜÊ±Æð×÷ÓÃ
+=======
+    stAlpha.u8Alpha0 = 0x0;//0xff; // ï¿½ï¿½ï¿½ï¿½ï¿½Î»Îª0Ê±,Ñ¡ï¿½ï¿½ï¿½Öµï¿½ï¿½ÎªAlpha
+    stAlpha.u8Alpha1 = 0xff;//0x0; // ï¿½ï¿½ï¿½ï¿½ï¿½Î»Îª1Ê±,Ñ¡ï¿½ï¿½ï¿½Öµï¿½ï¿½ÎªAlpha
+    stAlpha.u8GlobalAlpha = 0x0;//ï¿½ï¿½AlphaÍ¨ï¿½ï¿½Ê¹ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+>>>>>>> 8e8c131 (init)
     
     if (ioctl(fd, FBIOPUT_ALPHA_HIFB,  &stAlpha) < 0)
     {

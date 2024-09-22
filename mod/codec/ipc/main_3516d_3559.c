@@ -125,6 +125,7 @@ static gsf_venc_ini_t *p_venc_ini = NULL;
 static gsf_mpp_cfg_t  *p_cfg = NULL;
 
 //second sdp hook, fixed venc cfg;
+<<<<<<< HEAD
 #define SECOND_WIDTH(second) ((second) == SECOND_BT656_PAL?720: \
                               (second) == SECOND_BT656_NTSC?720:\
                               (second) == SECOND_BT656_288P?384:\
@@ -139,6 +140,22 @@ static gsf_mpp_cfg_t  *p_cfg = NULL;
                               (second) == SECOND_BT656_NTSC?PIC_D1_NTSC:\
                               (second) == SECOND_BT656_288P?PIC_288P:\
                               (second) == SECOND_BT656_600P?PIC_600P:\
+=======
+#define SECOND_WIDTH(second) ((second) == SECOND_BT656_PAL ? 720 :  \
+                              (second) == SECOND_BT656_NTSC ? 720 : \
+                              (second) == SECOND_BT656_288P ? 384 : \
+                              (second) == SECOND_BT656_600P ? 800 : \
+                              640)
+#define SECOND_HEIGHT(second) ((second) == SECOND_BT656_PAL ? 576 :  \
+                               (second) == SECOND_BT656_NTSC ? 480 : \
+                               (second) == SECOND_BT656_288P ? 288 : \
+                               (second) == SECOND_BT656_600P ? 600 : \
+                              512)
+#define SECOND_HIRES(second) ((second) == SECOND_BT656_PAL ? PIC_D1_PAL : \
+                              (second) == SECOND_BT656_NTSC ? PIC_D1_NTSC : \
+                              (second) == SECOND_BT656_288P ? PIC_288P : \
+                              (second) == SECOND_BT656_600P ? PIC_600P : \
+>>>>>>> 8e8c131 (init)
                               PIC_512P)
 
 int venc_fixed_sdp(int ch, int i, gsf_sdp_t *sdp)
